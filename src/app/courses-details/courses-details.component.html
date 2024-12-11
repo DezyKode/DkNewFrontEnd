@@ -41,7 +41,7 @@
           <h2 class="courses-title mb-30">
             {{ courseDetails.title }}
           </h2>
-          <h5>Photography Specialist By Jason Momoa</h5>
+          <!-- <h5>Photography Specialist By Jason Momoa</h5> -->
           <div class="course-details-img mb-30 learn-list">
             <img
               [src]="courseDetails.imgUrl"
@@ -92,123 +92,10 @@
                   </li>
                 </ul> -->
           <div class="learn-box mt-5">
-            <h5>25 Lessons ( 3h 36m )</h5>
+            <h5>Lessons</h5>
             <ul class="learn-list">
-              <li>
-                <a href="https://www.youtube.com/watch?v=7omGYwdcS04">
-                  <span class="play-video"
-                    ><img
-                      src="assets/img/icon/video-player.svg"
-                      alt="course-list"
-                  /></span>
-                  01. Intro Video <span class="time float-end">4:02</span>
-                </a>
-              </li>
-              <li>
-                <a href="https://www.youtube.com/watch?v=7omGYwdcS04">
-                  <span class="play-video"
-                    ><i class="fal fa-lock-alt"></i
-                  ></span>
-                  02. How to Open Camera
-                  <span class="time float-end">2:03</span>
-                </a>
-              </li>
-              <li>
-                <a href="https://www.youtube.com/watch?v=7omGYwdcS04">
-                  <span class="play-video"
-                    ><i class="fal fa-lock-alt"></i
-                  ></span>
-                  03. Balancing the Exposure
-                  <span class="time float-end">5:03</span>
-                </a>
-              </li>
-              <li>
-                <a href="https://www.youtube.com/watch?v=7omGYwdcS04">
-                  <span class="play-video"
-                    ><i class="fal fa-lock-alt"></i
-                  ></span>
-                  04. Preparing to Shoot
-                  <span class="time float-end">5:12</span>
-                </a>
-              </li>
-              <li>
-                <a href="https://www.youtube.com/watch?v=7omGYwdcS04">
-                  <span class="play-video"
-                    ><i class="fal fa-lock-alt"></i
-                  ></span>
-                  05. Studio Demonstration
-                  <span class="time float-end">6:12</span>
-                </a>
-              </li>
-              <li>
-                <a href="https://www.youtube.com/watch?v=7omGYwdcS04">
-                  <span class="play-video"
-                    ><i class="fal fa-lock-alt"></i
-                  ></span>
-                  06. Shutter Speed
-                  <span class="time float-end">7:00</span>
-                </a>
-              </li>
-              <li>
-                <a href="https://www.youtube.com/watch?v=7omGYwdcS04">
-                  <span class="play-video"
-                    ><i class="fal fa-lock-alt"></i
-                  ></span>
-                  07. Aperture <span class="time float-end">6:05</span>
-                </a>
-              </li>
-              <li>
-                <a href="https://www.youtube.com/watch?v=7omGYwdcS04">
-                  <span class="play-video"
-                    ><i class="fal fa-lock-alt"></i
-                  ></span>
-                  08. ISO <span class="time float-end">30:00</span>
-                </a>
-              </li>
-              <li>
-                <a href="https://www.youtube.com/watch?v=7omGYwdcS04">
-                  <span class="play-video"
-                    ><i class="fal fa-lock-alt"></i
-                  ></span>
-                  09. Editing Tips & Tricks
-                  <span class="time float-end">20:03</span>
-                </a>
-              </li>
-              <li>
-                <a href="https://www.youtube.com/watch?v=7omGYwdcS04">
-                  <span class="play-video"
-                    ><i class="fal fa-lock-alt"></i
-                  ></span>
-                  10. Advance Photography
-                  <span class="time float-end">40:36</span>
-                </a>
-              </li>
-              <li>
-                <a href="https://www.youtube.com/watch?v=7omGYwdcS04">
-                  <span class="play-video"
-                    ><i class="fal fa-lock-alt"></i
-                  ></span>
-                  10. Advance Photography-2
-                  <span class="time float-end">40:36</span>
-                </a>
-              </li>
-              <li>
-                <a href="https://www.youtube.com/watch?v=7omGYwdcS04">
-                  <span class="play-video"
-                    ><i class="fal fa-lock-alt"></i
-                  ></span>
-                  10. Advance Photography-3
-                  <span class="time float-end">40:36</span>
-                </a>
-              </li>
-              <li>
-                <a href="https://www.youtube.com/watch?v=7omGYwdcS04">
-                  <span class="play-video"
-                    ><i class="fal fa-lock-alt"></i
-                  ></span>
-                  10. Advance Photography-4
-                  <span class="time float-end">40:36</span>
-                </a>
+              <li *ngFor="let lesson of courseDetails.lessons">
+                {{ lesson }}
               </li>
             </ul>
           </div>
@@ -219,11 +106,16 @@
       <div class="col-xl-6 col-lg-7">
         <div class="project-details mb-65">
           <h2 class="courses-title mb-30">
-            {{ courseDetails.title }} Learning A-Z
+            {{ courseDetails.title }}
           </h2>
           <p>
             {{ courseDetails.description }}
           </p>
+          <ul class="bullet-points mt-4">
+            <li *ngFor="let point of courseDetails.bulletPoints">
+              {{ point }}
+            </li>
+          </ul>
           <li class="mt-4">
             <img
               src="assets/img/icon/calendar.png"
@@ -315,34 +207,22 @@
       </div>
       <div class="col-xl-6 col-lg-5">
         <div class="courses-ingredients">
-          <h2 class="corses-title mb-30">Course Includes</h2>
+          <h2 class="corses-title mb-30">Internship Includes</h2>
           <p>
             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed di
             nonumy eirmod tempor invidunt ut labore et dolore.
           </p>
           <ul class="courses-item mt-25">
             <li>
-              <img src="assets/img/icon/video.svg" alt="" /> 4 hours on-demand
-              video
+              <i class="fas fa-user-graduate"></i> Personality Development
             </li>
+            <li><i class="fas fa-newspaper"></i> Mock Interviews</li>
+            <li><i class="fas fa-download"></i> Resume Building</li>
+            <li><i class="fas fa-project-diagram"></i> Hands-on Projects</li>
+            <li><i class="fas fa-mobile-alt"></i> 100% Placement Assistance</li>
             <li>
-              <img src="assets/img/icon/newspaper.svg" alt="" /> 73 articles
-            </li>
-            <li>
-              <img src="assets/img/icon/download.svg" alt="" /> 650+
-              downloadable resources
-            </li>
-            <li>
-              <img src="assets/img/icon/infinity.svg" alt="" /> Full Lifetime
-              Access
-            </li>
-            <li>
-              <img src="assets/img/icon/mobile.svg" alt="" /> Access on mobile
-              and TV or any devices
-            </li>
-            <li>
-              <img src="assets/img/icon/certificate-line.svg" alt="" />
-              Certificate of completion
+              <i class="fas fa-certificate"></i> Professional Certificate of
+              Completion
             </li>
           </ul>
         </div>

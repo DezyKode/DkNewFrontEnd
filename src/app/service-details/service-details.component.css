@@ -1,0 +1,11 @@
+/* .bullet-points {
+  padding-left: 20px;
+
+  font-size: 16px;
+  color: #272425;
+} */
+
+.bullet-points li {
+  margin-bottom: 8px;
+  list-style-type: square;
+}
