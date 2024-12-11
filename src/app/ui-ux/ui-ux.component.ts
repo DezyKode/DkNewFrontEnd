@@ -28,12 +28,7 @@ export class UiUxComponent {
         id: '1',
         title: 'UI/UX',
         description:
-          'Learn the fundamentals of User Interface and User Experience design.',
-        periods: '12 Periods',
-        difficulty: 'Intermediate',
-        instructor: 'Mark Herry',
-        students: '6593+',
-        feedback: '4.8',
+          'Our UI/UX Design Training focuses on equipping you with the skills to create user-friendly, visually appealing, and intuitive digital experiences. Learn wireframing, prototyping, user research, and design tools like Figma and Adobe XD. Gain hands-on experience and build a portfolio to kickstart your career in design!',
         imgUrl: 'assets/img/course/details/RMUIUX.png',
       },
       // Add more mock course data as needed

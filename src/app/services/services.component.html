@@ -35,14 +35,24 @@
     <div class="row justify-content-center">
       <div class="col-xl-12 text-center">
         <div class="portfolio-menu mb-60">
-          <button class="gf_btn active" data-filter="*">All</button>
-          <button class="gf_btn" data-filter=".cat1">UI/UX Design</button>
-          <button class="gf_btn" data-filter=".cat2">Web Design</button>
-          <button class="gf_btn" data-filter=".cat3">
+          <button class="gf_btn active" (click)="filterCategory('*')">
+            All
+          </button>
+          <button class="gf_btn" (click)="filterCategory('cat1')">
+            UI/UX Design
+          </button>
+          <button class="gf_btn" (click)="filterCategory('cat2')">
+            Web Design
+          </button>
+          <button class="gf_btn" (click)="filterCategory('cat3')">
             Website Development
           </button>
-          <button class="gf_btn" data-filter=".cat4">App Development</button>
-          <button class="gf_btn" data-filter=".cat5">Digital Marketing</button>
+          <button class="gf_btn" (click)="filterCategory('cat4')">
+            App Development
+          </button>
+          <button class="gf_btn" (click)="filterCategory('cat5')">
+            Digital Marketing
+          </button>
           <!-- <button class="gf_btn" data-filter=".cat6">Full Stack-JAVA</button>
           <button class="gf_btn" data-filter=".cat7">Business Analytics</button>
           <button class="gf_btn" data-filter=".cat8">MERN-Stack</button>
@@ -51,15 +61,20 @@
       </div>
     </div>
     <div class="grid row">
-      <div class="col-lg-4 col-md-6 grid-item cat1">
+      <div
+        *ngFor="let service of filteredServices"
+        class="col-lg-4 col-md-6 grid-item"
+        [ngClass]="service.category"
+      >
+        <!-- <div class="col-lg-4 col-md-6 grid-item cat1"> -->
         <div class="z-gallery z-gallery-two gallery-03 mb-30">
           <div class="z-gallery__thumb mb-20">
             <!-- Use routerLink to navigate to the course detail page -->
-            <a [routerLink]="['/service-detail', '1']">
+            <a [routerLink]="['/service-detail', service.id]">
               <img
                 class="img-fluid"
-                src="assets/img/course/UIUX.png"
-                alt="UI/UX"
+                [src]="service.image"
+                [alt]="service.name"
               />
             </a>
           </div>
@@ -68,21 +83,22 @@
               class="course__meta d-flex align-items-center justify-content-between mb-15"
             ></div>
             <h4 class="sub-title mb-15">
-              <a [routerLink]="['/course-detail', '1']">UI/UX Design</a>
+              <a [routerLink]="['/service-detail', service.id]">
+                {{ service.name }}</a
+              >
             </h4>
             <p class="mb-20">
-              There are many variations of passages of with Lorem Ipsum
-              available.
+              {{ service.description }}
             </p>
             <a
-              [routerLink]="['/course-detail', '1']"
+              [routerLink]="['/service-detail', service.id]"
               class="read_more float-end"
-              >Learn More+</a
+              >Read More...</a
             >
           </div>
         </div>
       </div>
-      <div class="col-lg-4 col-md-6 grid-item cat2">
+      <!-- <div class="col-lg-4 col-md-6 grid-item cat2">
         <div class="z-gallery z-gallery-two gallery-03 mb-30">
           <div class="z-gallery__thumb mb-20">
             <a [routerLink]="['/service-detail', '2']"
@@ -97,16 +113,16 @@
               class="course__meta d-flex align-items-center justify-content-between mb-15"
             ></div>
             <h4 class="sub-title mb-15">
-              <a [routerLink]="['/course-detail', '2']">Web Design</a>
+              <a [routerLink]="['/service-detail', '2']">Web Design</a>
             </h4>
             <p class="mb-20">
               There are many variations of passages of with Lorem Ipsum
               available.
             </p>
             <a
-              [routerLink]="['/course-detail', '2']"
+              [routerLink]="['/service-detail', '2']"
               class="read_more float-end"
-              >Learn More+</a
+              >Read More...</a
             >
           </div>
         </div>
@@ -126,16 +142,16 @@
               class="course__meta d-flex align-items-center justify-content-between mb-15"
             ></div>
             <h4 class="sub-title mb-15">
-              <a [routerLink]="['/course-detail', '3']">Website Development</a>
+              <a [routerLink]="['/service-detail', '3']">Website Development</a>
             </h4>
             <p class="mb-20">
               There are many variations of passages of with Lorem Ipsum
               available.
             </p>
             <a
-              [routerLink]="['/course-detail', '3']"
+              [routerLink]="['/service-detail', '3']"
               class="read_more float-end"
-              >Learn More+</a
+              >Read More...</a
             >
           </div>
         </div>
@@ -155,7 +171,7 @@
               class="course__meta d-flex align-items-center justify-content-between mb-15"
             ></div>
             <h4 class="sub-title mb-15">
-              <a [routerLink]="['/course-detail', '4']"
+              <a [routerLink]="['/service-detail', '4']"
                 >Android App Development</a
               >
             </h4>
@@ -164,9 +180,9 @@
               available.
             </p>
             <a
-              [routerLink]="['/course-detail', '4']"
+              [routerLink]="['/service-detail', '4']"
               class="read_more float-end"
-              >Learn More+</a
+              >Read More...</a
             >
           </div>
         </div>
@@ -186,16 +202,16 @@
               class="course__meta d-flex align-items-center justify-content-between mb-15"
             ></div>
             <h4 class="sub-title mb-15">
-              <a [routerLink]="['/course-detail', '5']">Digital Marketing</a>
+              <a [routerLink]="['/service-detail', '5']">Digital Marketing</a>
             </h4>
             <p class="mb-20">
               There are many variations of passages of with Lorem Ipsum
               available.
             </p>
             <a
-              [routerLink]="['/course-detail', '5']"
+              [routerLink]="['/service-detail', '5']"
               class="read_more float-end"
-              >Learn More+</a
+              >Read More...</a
             >
           </div>
         </div>
@@ -212,20 +228,20 @@
               class="course__meta d-flex align-items-center justify-content-between mb-15"
             ></div>
             <h4 class="sub-title mb-15">
-              <a [routerLink]="['/course-detail', '6']">IOS App Development</a>
+              <a [routerLink]="['/service-detail', '6']">IOS App Development</a>
             </h4>
             <p class="mb-20">
               There are many variations of passages of with Lorem Ipsum
               available.
             </p>
             <a
-              [routerLink]="['/course-detail', '6']"
+              [routerLink]="['/service-detail', '6']"
               class="read_more float-end"
-              >Learn More+</a
+              >Read More...</a
             >
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
     <!-- <div class="row">
       <div class="col-xxl-12 mt-20 text-center mb-20">

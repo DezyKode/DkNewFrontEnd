@@ -1,6 +1,6 @@
 <section
   class="page-title-area d-flex align-items-end"
-  style="background-image: url(assets/img/page-title-bg/Contact-US.jpg)"
+  style="background-image: url(assets/img/page-title-bg/eq.jpg)"
 >
   <div class="container">
     <div class="row align-items-end">
@@ -174,7 +174,6 @@
               class="form-select"
               aria-label="Select State"
               required
-              [(ngModel)]="selectedState"
               (change)="onStateChange()"
             >
               <option value="" disabled>Select State</option>
@@ -195,12 +194,7 @@
 
           <!-- City -->
           <div class="col-lg-6 col-md-6 mb-30">
-            <select
-              id="city"
-              formControlName="city"
-              class="form-select"
-              [(ngModel)]="selectedCity"
-            >
+            <select id="city" formControlName="city" class="form-select">
               <option value="" disabled>Select City</option>
               <option *ngFor="let city of filteredCities" [value]="city">
                 {{ city }}

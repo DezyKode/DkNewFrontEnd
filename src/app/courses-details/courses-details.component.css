@@ -27,3 +27,7 @@
   border: none;
   color: #eeee;
 }
+.bullet-points li {
+  margin-bottom: 8px;
+  list-style-type: square;
+}
